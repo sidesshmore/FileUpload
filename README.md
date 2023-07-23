@@ -1,7 +1,5 @@
 # FileUpload Django Project
 
-![File Upload](./media/image/upload.png)
-
 FileUpload is a Django-based web application that allows users to upload files to the server. It provides a simple and user-friendly interface for file uploads and offers easy integration with Django's backend capabilities.
 
 ## Features
