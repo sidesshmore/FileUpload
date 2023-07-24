@@ -158,30 +158,26 @@
 
         function upload_file() {
             var files = pond.getFiles();
-
             var formdata = new FormData();
-
+        
             for (var i = 0; i < files.length; i++) {
                 formdata.append('files', files[i].file);
             }
-
-            fetch('/handle/', {
+        
+            fetch('https://quickshare-0542.onrender.com/handle/', { // Updated URL
                 method: 'POST',
                 headers: {
                     'X-CSRFToken': '{{ csrf_token }}'
                 },
-                
                 body: formdata
             }).then(res => res.json())
                 .then(result => {
                     console.log(result);
-
-                    url = `http://127.0.0.1:8000/download/${result.data.folder}`;
-
+                    url = `https://quickshare-0542.onrender.com/download/${result.data.folder}`; // Updated URL
                     document.getElementById('btn').style.display = 'block';
-
                 });
         }
+        
 
         function copyClip() {
             console.log('Copying to clipboard...');
