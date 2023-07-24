@@ -164,19 +164,20 @@
                 formdata.append('files', files[i].file);
             }
         
-            fetch('https://quickshare-0542.onrender.com/handle/', { // Updated URL
+            fetch('{% url "handle" %}', {  // Use the {% url %} template tag to generate the URL
                 method: 'POST',
                 headers: {
                     'X-CSRFToken': '{{ csrf_token }}'
                 },
                 body: formdata
             }).then(res => res.json())
-                .then(result => {
-                    console.log(result);
-                    url = `https://quickshare-0542.onrender.com/download/${result.data.folder}`; // Updated URL
-                    document.getElementById('btn').style.display = 'block';
-                });
+            .then(result => {
+                console.log(result);
+                url = `https://quickshare-0542.onrender.com/download/${result.data.folder}`; // Update the base URL
+                document.getElementById('btn').style.display = 'block';
+            });
         }
+        
         
 
         function copyClip() {

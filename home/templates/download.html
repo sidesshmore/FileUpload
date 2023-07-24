@@ -119,9 +119,10 @@
             <div class="card-bodqy">
                 <div class="background">
                     <center>
-                        <a href="/media/zip/{{uid}}.zip" class="clipboard">Download Files</a>
+                        <a href="https://quickshare-0542.onrender.com/media/zip/{{ uid }}.zip" class="clipboard">Download Files</a>
                         {% comment %} <p>Have you already clicked?</p> {% endcomment %}
                     </center>
+                    
                 </div>
             </div>
         </div>
@@ -136,13 +137,19 @@
 
     <script>
         $(function () {
-            $.fn.filepond.registerPlugin(FilePondPluginImagePreview, );
+            $.fn.filepond.registerPlugin(FilePondPluginImagePreview);
             $('.my-pond').filepond();
             $('.my-pond').filepond('allowMultiple', true);
             $('.my-pond').on('FilePond:addfile', function (e) {
                 console.log('file added event', e);
             });
         });
+        
+        // Function to generate download URL based on the folder ID
+        function getDownloadURL(folderId) {
+            return `https://quickshare-0542.onrender.com/download/${folderId}`;
+        }
+        
     </script>
 
 </body>
