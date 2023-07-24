@@ -13,8 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from dotenv import load_dotenv
 
-
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -93,12 +94,12 @@ WSGI_APPLICATION = 'FileUpload.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'quickshare',
-        'USER': 'quickshare_user',
-        'PASSWORD': 'ePyYgXpMXynhB7No7XCWKbzONOsjCv0X',
-        'HOST': 'dpg-civan1c07spttticehog-a.oregon-postgres.render.com',
-        'PORT': '',  # If applicable, set the port for your PostgreSQL database
+        'ENGINE': os.getenv('DB_ENGINE'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
