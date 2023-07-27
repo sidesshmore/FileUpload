@@ -2,19 +2,13 @@
 
 FileUpload is a Django-based web application that allows users to upload files to the server. It provides a simple and user-friendly interface for file uploads and offers easy integration with Django's backend capabilities.
 
+https://github.com/sidesshmore/FileUpload/assets/109675078/1cc5ddb3-2c62-4ea9-9a8d-f84f2680cf95
+
 ## Features
 
 - File upload functionality with support for multiple files.
 - Copy URL feature to copy the link to the uploaded files.
 - Dowload the zip by pasting link in browser
-
-## Screen Recording
-
-
-
-
-https://github.com/sidesshmore/FileUpload/assets/109675078/1cc5ddb3-2c62-4ea9-9a8d-f84f2680cf95
-
 
 
 ## Getting Started
